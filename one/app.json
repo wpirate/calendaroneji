@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/memo/memo",
+    "pages/index/index",
+    "pages/event/event",
+    "pages/event/edit",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffa07a",
+    "navigationBarTitleText": "ONE鸡日历",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "height": "100rpx",
+    "selectedColor": "#ffa07a",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/memo/memo",
+        "iconPath": "i/egg.png",
+        "selectedIconPath": "i/one.jpg",
+        "text": "备忘录"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "i/egg2.png",
+        "selectedIconPath": "i/two.jpg",
+        "text": "倒数日"
+      }
+    ]
+  }
+}

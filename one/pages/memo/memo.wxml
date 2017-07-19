@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<!-- 备忘录部分第一行文本 -->
+<view class="container">
+  <view  bindtap="bindViewTap" class="header">    
+    欢迎<text class="userinfo-nickname">{{userInfo.nickName}}</text>使用
+  </view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<!--输入框  -->
+ <view class="input-wrap">    
+      <input type="text" value='{{newLi.content}}' returnKeyType='send' placeholder="请输入待做的事" class="ipt-main"  bindinput='iptChange' />   
+       <view class="flex-row flex-time" wx:if="{{newLi.content}}"> 
+             <!--滚动选择器  -->
+             <picker mode="date" value="{{newLi.begin}}" start="1949-10-01" end="2999-12-30" bindchange="bindDateChange" class="pick-date date">  
+                 <view class="picker">  
+                    请选择日期: {{newLi.begin}}  
+                 </view>  
+              </picker>
+        </view>
+        <view class="flex-row" wx:if="{{newLi.content}}">        
+          <button class="btn btn-submit" formType="submit" hover-class="btn-hover">提交</button>
+          <button class="btn btn-cancel" formType="reset">清空</button>
+       </view>
+  </view>
+  </form>
+
+  <!--事项列表  -->
+  <view class="list-wrap" wx:if="{{lists.length>0}}">
+    <view wx:for="{{lists}}" wx:key="{{done}}" wx:if="{{showAll ||(!showAll && !item.done)}}" id="{{item.id}}" class="{{item.done?'done list':'list'}}">        
+        <text>{{index+1}}.</text>
+            <text data-id ="{{item.id}}"  class="cnt" bindtap="toChange" >{{item.content}}</text>  
+        <text class="date">{{item.begin}}</text>
+        <icon class="ico-done" bindtap="setDone" data-id="{{item.id}}" type="success" size='20' color="{{item.done?'#ff7f50':'#bc8f8f'}}" />
+        <icon class="ico-delete" bindtap="toDelete" data-id="{{item.id}}" type='cancel' size='20' color="#bc8f8f" />
+    </view>
+    <view class="footer">
+        <view class="ft-area">
+            <text>{{lists.length}}条</text>
+        </view>
+         <view class="ft-area ft-mid">
+            <text wx:if="{{showAll}}" bindtap="showUnfinished" class="ft-action">显示未完成</text>
+            <text wx:else bindtap="showAll" class="ft-action">显示全部</text>
+        </view>
+        <view class="ft-area">
+            <text bindtap="doneAll" class="ft-action">全部完成</text>
+            <text bindtap="deleteAll" class="ft-action">全删</text>
+        </view>
+    </view>
+  </view>
+  <view class="input-wrap mt" wx:if="{{lists.length>0}}">
+    <button class="btn btn-save" bindtap="saveData">保存数据</button>
+  </view>
+</view>
+ 

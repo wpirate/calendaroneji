@@ -1,0 +1,22 @@
+page{padding-top:50px;}
+.event{background:#f8f8f8; 
+/*border-bottom: 0rpx solid #E5E5E5;*/
+ display:flex; flex-direction: column; align-items:center; min-height: 80%;  
+ /*margin-bottom: 0rpx; */
+ vertical-align: top;
+border-style: solid; border-width: 2px; 
+border-color:#F4a460;
+padding-bottom: 30rpx;
+}
+.event .eventdate{text-align:left;color:#000000; font-size:28rpx; padding-right:400rpx;}
+.event .days {margin: 40rpx auto 80rpx auto; }
+.event .days .num{color:#000000; font-size:80rpx; font-weight:bold;}
+.event .days .unit{color:#000000; font-size:80rpx;}
+.event .wisdom {margin:20rpx 30rpx 30rpx 30rpx; color:#999; font-size:24rpx; line-height:30rpx; display:flex; flex-direction: column; align-items:right;}
+.event .wisdom .content{width:100%; text-align:left;}
+.event .wisdom .author{width:100%; padding-top:10rpx; font-size:24rpx; color:#999; text-align:right;}
+.notice{color:#999; font-size:24rpx; }
+
+.buttons{margin-top:100rpx;}
+.iconlinks{margin:0; text-align: right; padding-top:40rpx;}
+.iconlinks .iconlink{color:#888888; font-size: 40rpx; line-height:36rpx; display:inline-block; padding-left:20rpx; margin-left:37rpx; text-align:center;background-size:35rpx 35rpx; background-repeat:no-repeat; background-position: left top;} 
